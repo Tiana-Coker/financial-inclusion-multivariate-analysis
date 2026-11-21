@@ -10,8 +10,13 @@ __pycache__/
 # Jupyter temporary files
 .ipynb_checkpoints/
 
-# Local datasets
-data/
+# Ignore original datasets
+data/*
+
+# Allow processed datasets
+!data/processed/
+data/processed/*
+!data/processed/financial_inclusion_cleaned_2021.csv
 
 # IDE files
 .idea/

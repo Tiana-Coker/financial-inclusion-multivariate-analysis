@@ -1,49 +1,90 @@
-# Financial Inclusion and Digital Financial Behaviour
-### A Multivariate Analysis of Emerging and Developing Economies
+# The Income Divide in Financial Inclusion
+### A Multivariate Analysis of Financial Access and Behaviour in Developing and Emerging Economies
 
-## What is this project about?
+## Project Overview
 
-In many developing countries, people manage money in very different ways.
-In some countries, most people use **bank accounts and debit cards**.
-In others, people skip banks entirely and use **mobile money on their phones**.
-And in some, **cash** is still king.
+Financial access and behaviour can differ between lower-income and higher-income adults.
 
-This project uses World Bank survey data to find out:
-- How do countries differ in the way people access and use financial services?
-- Can countries be grouped into clear "types" of financial markets?
-- Which kinds of people (by education, income, age, gender, city or village) are more likely to use digital finance?
+This project examines these differences across developing and emerging economies using data from the World Bank Global Findex Database.
 
-## Why does it matter?
+The analysis compares the poorest 40% and richest 60% of adults within each economy to understand how financial access and behaviour differ between the two income groups.
 
-A fintech or payment company entering a new country needs to know what kind of
-market it is walking into. A "bank and card" market needs different products than
-a "mobile money" market. This project helps describe those differences.
+## Research Questions
 
-## The data
+1. How do financial access and behaviour differ between the poorest 40% and richest 60%, and which financial services show the largest gaps?
+2. What are the main dimensions that summarise financial access and behaviour?
+3. What underlying factors explain the relationships among financial inclusion indicators?
+4. What distinct groups of developing and emerging economies can be identified based on financial inclusion and income-related differences?
 
-- **Source:** World Bank Global Findex Database 2025 (survey conducted in 2024)
-- **Countries:** 92 low- and middle-income economies
-- **Indicators:** 11, covering bank accounts, mobile money, cards, digital payments, saving, borrowing and internet use
-- **Two levels:** country-level data (comparing markets) and individual-level data (comparing people)
+## Dataset
 
-The raw data is not included here. It can be downloaded from the
-[World Bank Global Findex website](https://www.worldbank.org/en/publication/globalfindex).
+- **Source:** World Bank Global Findex Database 2025
+- **Survey year:** 2021
+- **Economies:** 73 developing and emerging economies
+- **Income groups:** Poorest 40% and richest 60%
+- **Observations:** 146
+- **Financial indicators:** 8
+
+The analysis focuses on low-income, lower-middle-income and upper-middle-income economies.
+
+The selected indicators cover financial institution account ownership, digital payments, utility payments, saving, borrowing and access to emergency funds.
+
+The cleaned dataset contains the eight indicators and three descriptive columns.
+
+The original data can be obtained from the [World Bank Global Findex website](https://www.worldbank.org/en/publication/globalfindex).
 
 ## Methods
 
-| Method | What it does in this project |
+| Method | Purpose |
 |---|---|
-| Principal Component Analysis (PCA) | Summarises 11 indicators into a few key dimensions |
-| Factor Analysis | Finds the underlying patterns that explain why some indicators move together |
-| Cluster Analysis | Groups similar countries into market types |
-| Multiple Correspondence Analysis (MCA) | Shows which kinds of people use which financial services |
+| Descriptive Statistics | Examine financial indicators and compare the two income groups |
+| Principal Component Analysis (PCA) | Identify the main dimensions of financial access and behaviour |
+| Factor Analysis (FA) | Examine underlying factors among the financial indicators |
+| Cluster Analysis | Group economies based on financial inclusion patterns and income differences |
 
 ## Tools
 
-Python · Jupyter Notebook · pandas · NumPy · Matplotlib · Seaborn
+Python · Jupyter Notebook · pandas · NumPy · Matplotlib · Seaborn · scikit-learn · factor_analyzer · pingouin
 
-## Project status
+## Repository Structure
 
-🚧 **In progress.** 
+```text
+financial-inclusion-multivariate-analysis/
+│
+├── income_inequality_analysis.ipynb
+├── data/
+│   └── processed/
+│       └── financial_inclusion_cleaned_2021.csv
+├── README.md
+└── .gitignore
+```
 
----
+The notebook contains the data preparation, statistical analysis, visualisations and interpretations.
+
+The cleaned CSV contains the data prepared for the analysis. The original Excel dataset is not included in the repository.
+
+To reproduce the data preparation from the beginning, download the original Global Findex workbook, save it as `data/GlobalFindexDatabase2025.xlsx`, and use its `Data` worksheet.
+
+## Project Status
+
+**In progress**
+
+Completed:
+- Data preparation and cleaning
+- Descriptive statistics
+- Outlier investigation
+- Income-group comparisons
+- Standardisation
+- Correlation and partial correlation analysis
+- KMO assessment
+
+Next stages:
+- Principal Component Analysis
+- Factor Analysis
+- Cluster Analysis
+
+The results and documentation will be updated as the analysis progresses.
+
+## Data Source
+
+World Bank. *Global Findex Database 2025*. Data for the 2021 survey.
